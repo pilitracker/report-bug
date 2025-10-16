@@ -71,72 +71,6 @@
       padding: 0 20px 80px;
     }
 
-    form {
-      background-color: #1b2536;
-      border-radius: 20px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    label {
-      font-size: 15px;
-      color: #b5becd;
-      margin-bottom: 6px;
-      display: block;
-    }
-
-    input, textarea {
-      width: 95%;
-      background-color: #101a2a;
-      border: 1px solid #2a354a;
-      border-radius: 10px;
-      color: #fff;
-      padding: 10px 12px;
-      font-size: 15px;
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: #34c759;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    button {
-      background-color: #34c759;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #28a745;
-    }
-
-    .confirmation {
-      display: none;
-      background-color: #162232;
-      border: 1px solid #2a354a;
-      color: #b5becd;
-      padding: 16px;
-      border-radius: 14px;
-      text-align: center;
-      margin-top: 20px;
-      font-size: 15px;
-    }
-
     footer {
       text-align: center;
       color: #778196;
@@ -172,20 +106,6 @@
   </footer>
 
   <script>
-    const form = document.getElementById("bugForm");
-    const confirmation = document.getElementById("confirmation");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      // Example of local confirmation only (you can replace with your API or Formspree endpoint)
-      form.style.display = "none";
-      confirmation.style.display = "block";
-
-      // Optional: send data to console for testing
-      const formData = Object.fromEntries(new FormData(form).entries());
-      console.log("Bug report submitted:", formData);
-    });
     const translations = {
       en: `
         <p>If you found a bug or something doesn’t work as expected, please let us know!</p>
