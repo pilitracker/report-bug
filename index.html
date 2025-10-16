@@ -1,1 +1,176 @@
-report bug
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report a Bug – Pilik</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
+      background-color: #0e1624;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 40px 20px 16px;
+    }
+
+    header img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 15px;
+      color: #b5becd;
+      margin-top: 4px;
+    }
+
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    form {
+      background-color: #1b2536;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    label {
+      font-size: 15px;
+      color: #b5becd;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background-color: #101a2a;
+      border: 1px solid #2a354a;
+      border-radius: 10px;
+      color: #fff;
+      padding: 10px 12px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #34c759;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #34c759;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #28a745;
+    }
+
+    .confirmation {
+      display: none;
+      background-color: #162232;
+      border: 1px solid #2a354a;
+      color: #b5becd;
+      padding: 16px;
+      border-radius: 14px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      color: #778196;
+      font-size: 13px;
+      padding: 40px 0 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="pill_icon.png" alt="Pilik Logo" />
+    <h1>Report a Bug</h1>
+    <p>Help us improve Pilik by describing any issue you’ve encountered</p>
+  </header>
+
+  <main>
+    <form id="bugForm">
+      <div>
+        <label for="description">Describe the issue</label>
+        <textarea id="description" name="description" placeholder="What happened? Please describe the steps to reproduce the bug..." required></textarea>
+      </div>
+
+      <div>
+        <label for="device">Device & OS</label>
+        <input id="device" name="device" placeholder="e.g. iPhone 14, iOS 18.0" required />
+      </div>
+
+      <div>
+        <label for="email">Your email (optional)</label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" />
+      </div>
+
+      <button type="submit">Send Report</button>
+    </form>
+
+    <div class="confirmation" id="confirmation">
+      ✅ Thank you! Your feedback has been recorded.
+    </div>
+  </main>
+
+  <footer>
+    Pilik © 2025 · All rights reserved
+  </footer>
+
+  <script>
+    const form = document.getElementById("bugForm");
+    const confirmation = document.getElementById("confirmation");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      // Example of local confirmation only (you can replace with your API or Formspree endpoint)
+      form.style.display = "none";
+      confirmation.style.display = "block";
+
+      // Optional: send data to console for testing
+      const formData = Object.fromEntries(new FormData(form).entries());
+      console.log("Bug report submitted:", formData);
+    });
+  </script>
+
+</body>
+</html>
