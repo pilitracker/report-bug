@@ -1,4 +1,4 @@
-tion Traacker<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -65,6 +65,15 @@ tion Traacker<!DOCTYPE html>
         margin-bottom: 14px;
     }
 
+    .appstore-badge {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .appstore-badge:hover {
+      transform: scale(1.05);
+    }
+
     main {
       max-width: 280px;
       margin: 0 auto;
@@ -113,7 +122,18 @@ tion Traacker<!DOCTYPE html>
         <p>You can reach us by email at:<br>
         <a href="mailto:support@pilik.app">pilik.medtracker@gmail.com</a></p>
         <br><br>
-        <p>You can also leave feedback or report an issue directly on our app store page</p> 
+        <p>You can also leave feedback or report an issue directly on our app store page</p>
+
+        <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" class="appstore-badge" aria-label="Download on the App Store">
+          <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" width="160" height="48" role="img">
+            <rect width="135" height="40" rx="8" fill="#000"/>
+            <path fill="#fff" d="M31.6 20.9c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4.1-2.6-5-2.6-2.1-.2-4.1 1.2-5.1 1.2s-2.6-1.2-4.3-1.2c-2.2 0-4.2 1.3-5.3 3.3-2.3 3.9-.6 9.5 1.6 12.6 1.1 1.6 2.3 3.3 4 3.3 1.6 0 2.2-1.1 4.2-1.1 2 0 2.6 1.1 4.3 1.1 1.8 0 3-1.6 4-3.2 1.3-1.9 1.8-3.8 1.8-3.9-.1-.1-3.5-1.3-3.6-5.4zM27.9 11.4c.9-1.1 1.6-2.6 1.5-4.1-1.5.1-3.1 1-4.1 2.2-.9 1.1-1.7 2.7-1.5 4.2 1.6.1 3.2-.9 4.1-2.3z"/>
+            <text x="50" y="25" font-family="SF Pro Display, -apple-system, sans-serif" font-size="10.5" fill="#fff">Download on the</text>
+            <text x="50" y="35" font-family="SF Pro Display, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#fff">App Store</text>
+            <path fill="#fff" d="M15 20z"/>
+          </svg>
+        </a>
+
         <p>App Store:<br>
         <a href="https://apps.apple.com/us/app/pilik/id6753901541" target="_blank">Pilik - Medication Tracker</a></p>
       `,
