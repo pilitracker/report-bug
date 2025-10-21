@@ -262,9 +262,15 @@
 
     select.addEventListener("change", e => render(e.target.value));
 
-    const browserLang = navigator.language.slice(0, 2);
-    render(translations[browserLang] ? browserLang : "en");
-    select.value = translations[browserLang] ? browserLang : "en";
+    // support ?lang=xx
+    const params = new URLSearchParams(window.location.search);
+    const lp = params.get("lang");
+    const browserLang = navigator.language.slice(0,2);
+    const defaultLang = translations[browserLang] ? browserLang : "en";
+    const activeLang  = translations[lp] ? lp : defaultLang;
+
+    render(activeLang);
+    langSelect.value = activeLang;
   </script>
 
 </body>
